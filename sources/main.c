@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   word_gen.c                                         :+:      :+:    :+:   */
+/*   main.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/15 10:50:31 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/15 10:56:43 by jlasne           ###   ########.fr       */
+/*   Created: 2016/09/15 10:15:56 by jlasne            #+#    #+#             */
+/*   Updated: 2016/09/15 10:57:54 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <word_gen.h>
 
-t_bool	word_gen(word_gen* var)
+int		main(int argc, char **argv)
 {
-	while (var->w_nb > 0)
-	{
-		//STUFF
-	}
-	return (TRUE);
+	word_gen var;
+
+	var.w_nb = ft_atoi(argv[1]);
+	var.w_size = ft_atoi(argv[2]);
+	if (argc != 3)
+		return (-1);
+	if (! (world_gen(&var)))
+			return (0);
+	else
+			return (-1);
 }
