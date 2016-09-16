@@ -1,0 +1,27 @@
+0 = success
+-1 = failure (undefined)
+-2 = Failed to initiate alphabet (Malloc error ?)
+-3 = Failed to initiate vowels
+-4 = Failed to initiate consonants
+-5 = Failed to initiate double consonants (eg. br, dl, cl, etc...)
+-6 = Failed to allocate the word to generate
+
+
+vri
+cr, cl, ch,  cc
+dr, dl, dj, dh, dd
+fr, fl, fh, ff
+gl, gr, gn, gm, gh
+kr, kl, kh, ks
+lh, ll
+mt, mh, mm
+nt, nh, nn
+ps, pr, pl, ph pf, pn, pp
+qr, ql, qh, (qw)
+rh, rr,
+sh, ss, sl, sm, sn
+tt, th, tr, tl
+vr, vl,
+wh
+
+59

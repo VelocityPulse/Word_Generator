@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 13:57:37 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/16 16:32:03 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,33 @@ t_bool	init_double_c(word_gen *var)
 	return (TRUE);
 }
 
+t_bool	malloc_word(word_gen *var)
+{
+	if (! (var->word = malloc(var->w_size * sizeof(char))))
+		return (FALSE);
+	else
+		return (TRUE);
+}
+
+void	fill_rand(word_gen *var)
+{
+	int i;
+	int nb;
+
+	i = 0;
+	while (var->w_size > 0)
+	{
+		var->word[i] = var->alphabet[ft_rand(0, 25)];
+		i++;
+		var->w_size--;
+	}
+}
+
+void	print_word(word_gen *var)
+{
+	ft_putstr(var->word);
+}
+
 int		word_gen(word_gen *var)
 {
 	if (! (init_alpha(&var)))
@@ -214,6 +241,11 @@ int		word_gen(word_gen *var)
 		return (-5);
 	}
 	else
+	if (! (malloc_word(&var)))
+		return (-6);
+	//We then generate the word
+	fill_rand(&var);
+	print_word(&var);
 	return (0);
 }
 

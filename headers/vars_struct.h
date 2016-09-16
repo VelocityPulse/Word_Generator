@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 10:27:53 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 14:51:25 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/16 16:37:15 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ struct word_gen
 {
 	int		w_size;
 	int		w_nb;
+	char	*word;
 	char	*alphabet;
 	char 	*vowels;
 	char	*consonants;
