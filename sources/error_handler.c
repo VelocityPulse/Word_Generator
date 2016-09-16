@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:34:06 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 13:45:24 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/16 13:52:07 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	print_error(int error_number)
 {
+	if (error_number == 0)
+	{
+		ft_putstr("Application exited sucessfully w/o major errors");
+	}
 	if (error_number == -1)
 	{
 		ft_putstr("Application exited with error number -1, Unknown error.\n");
@@ -48,51 +52,4 @@ void	print_error(int error_number)
 		ft_putstr("Please contact the author to report the bug.\n");
 		return ;
 	}
-	/*
-		if (error_number == -3)
-	{
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-	}
-		if (error_number == -3)
-	{
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-	}
-		if (error_number == -3)
-	{
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-	}
-		if (error_number == -3)
-	{
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-	}
-		if (error_number == -3)
-	{
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-		ft_putstr("");
-	}
-	*/
 }

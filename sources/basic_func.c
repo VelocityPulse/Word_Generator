@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   word_gen.h                                         :+:      :+:    :+:   */
+/*   basic_func.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/15 10:22:12 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 14:52:18 by jlasne           ###   ########.fr       */
+/*   Created: 2016/09/16 14:04:25 by jlasne            #+#    #+#             */
+/*   Updated: 2016/09/16 14:04:27 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WORD_GEN_H
-# define WORD_GEN_H
-#include <stdlib.h>
 #include <unistd.h>
-#include "vars_struct.h"
-#define TRUE 1
-#define FALSE 1
-typedef int		t_bool;
 
-int		ft_putchar(char c);
+int		ft_putchar(char c)
+{
+	int i;
 
-void	ft_putstr(char *str);
+	i = write(1, &c, 1);
+	return (i);
+}
 
-int		word_gen(word_gen *var);
+void	ft_putstr(char *str)
+{
+	int i;
 
-int		ft_atoi(const char *str);
-
-int		ft_rand(int min, int max);
-
-void	print_error(int error_number);
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}

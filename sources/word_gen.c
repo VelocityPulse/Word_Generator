@@ -6,11 +6,11 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 13:39:57 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/16 13:57:37 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/rand.h"
+#include "../headers/word_gen.h"
 
 t_bool	init_alpha(word_gen *var)
 {
@@ -195,12 +195,25 @@ t_bool	init_double_c(word_gen *var)
 int		word_gen(word_gen *var)
 {
 	if (! (init_alpha(&var)))
+	{
 		return (-2);
+	}
+	else
 	if (! (init_vowels(&var)))
+	{
 		return (-3);
+	}
+	else
 	if (! (init_consonants(&var)))
+	{
 		return (-4);
+	}
+	else
 	if (! (init_double_c(&var)))
+	{
 		return (-5);
+	}
+	else
+	return (0);
 }
 
