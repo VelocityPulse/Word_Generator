@@ -24,6 +24,6 @@ struct word_gen
 	char 	*vowels;
 	char	*consonants;
 	char	**double_c;
-};
+} t_word_gen;
 
 #endif
