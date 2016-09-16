@@ -15,6 +15,8 @@
 
 #include "word_gen.h"
 
+typedef struct word_gen word_gen;
+
 struct word_gen
 {
 	int		w_size;
