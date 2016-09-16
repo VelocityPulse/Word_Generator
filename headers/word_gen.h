@@ -19,8 +19,10 @@
 
 typedef t_bool int;
 
-t_bool	word_gen(word_gen *var);
+int		word_gen(word_gen *var);
 
 int		ft_atoi(const char *str);
+
+int		ft_rand(int min, int max)
 
 #endif

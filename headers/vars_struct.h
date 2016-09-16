@@ -16,8 +16,12 @@
 typedef struct word_gen word_gen
 struct word_gen
 {
-	int w_size;
-	int w_nb;
+	int		w_size;
+	int		w_nb;
+	char	*alphabet;
+	char 	*vowels;
+	char	*consonants;
+	char	**double_c;
 };
 
 #endif
