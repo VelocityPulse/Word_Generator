@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 13:31:00 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/16 13:39:57 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,7 @@ t_bool	init_double_c(word_gen *var)
 	var->double_c[58] = "vr";
 	var->double_c[59] = malloc(2 * sizeof(char))
 	var->double_c[59] = "vl";
+	return (TRUE);
 }
 
 int		word_gen(word_gen *var)
@@ -200,6 +201,6 @@ int		word_gen(word_gen *var)
 	if (! (init_consonants(&var)))
 		return (-4);
 	if (! (init_double_c(&var)))
-		return (-4);
+		return (-5);
 }
 
