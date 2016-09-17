@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 16:32:03 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/17 11:09:56 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_bool	init_alpha(word_gen *var)
 	i = 0;
 	if (! (var->alphabet = malloc(27 * sizeof(char))))
 		return (FALSE);
-	while (i <= 122)
+	while ((i + 97) <= 122)
 	{
 		var->alphabet[i] = 97 + i;
 		i++;
@@ -66,6 +66,7 @@ t_bool	init_consonants(word_gen *var)
 	var->consonants[17] = 'w';
 	var->consonants[18] = 'x';
 	var->consonants[19] = 'z';
+	var->consonants[20] = '\0';
 	return (TRUE);
 }
 
@@ -73,121 +74,121 @@ t_bool	init_double_c(word_gen *var)
 {
 	if (! (var->double_c = malloc(59 * sizeof (char *))))
 		return (FALSE);
-	var->double_c[0] = malloc(2 * sizeof(char))
+	var->double_c[0] = malloc(2 * sizeof(char));
 	var->double_c[0] = "br";
-	var->double_c[1] = malloc(2 * sizeof(char))
+	var->double_c[1] = malloc(2 * sizeof(char));
 	var->double_c[1] = "bl";
-	var->double_c[2] = malloc(2 * sizeof(char))
+	var->double_c[2] = malloc(2 * sizeof(char));
 	var->double_c[2] = "bz";
-	var->double_c[3] = malloc(2 * sizeof(char))
+	var->double_c[3] = malloc(2 * sizeof(char));
 	var->double_c[3] = "bh";
-	var->double_c[4] = malloc(2 * sizeof(char))
+	var->double_c[4] = malloc(2 * sizeof(char));
 	var->double_c[4] = "cr";
-	var->double_c[5] = malloc(2 * sizeof(char))
+	var->double_c[5] = malloc(2 * sizeof(char));
 	var->double_c[5] = "cl";
-	var->double_c[6] = malloc(2 * sizeof(char))
+	var->double_c[6] = malloc(2 * sizeof(char));
 	var->double_c[6] = "ch";
-	var->double_c[7] = malloc(2 * sizeof(char))
+	var->double_c[7] = malloc(2 * sizeof(char));
 	var->double_c[7] = "cc";
-	var->double_c[8] = malloc(2 * sizeof(char))
+	var->double_c[8] = malloc(2 * sizeof(char));
 	var->double_c[8] = "dr";
-	var->double_c[9] = malloc(2 * sizeof(char))
+	var->double_c[9] = malloc(2 * sizeof(char));
 	var->double_c[9] = "dl";
-	var->double_c[10] = malloc(2 * sizeof(char))
+	var->double_c[10] = malloc(2 * sizeof(char));
 	var->double_c[10] = "dj";
-	var->double_c[11] = malloc(2 * sizeof(char))
+	var->double_c[11] = malloc(2 * sizeof(char));
 	var->double_c[11] = "dh";
-	var->double_c[12] = malloc(2 * sizeof(char))
+	var->double_c[12] = malloc(2 * sizeof(char));
 	var->double_c[12] = "dd";
-	var->double_c[13] = malloc(2 * sizeof(char))
+	var->double_c[13] = malloc(2 * sizeof(char));
 	var->double_c[13] = "fr";
-	var->double_c[14] = malloc(2 * sizeof(char))
+	var->double_c[14] = malloc(2 * sizeof(char));
 	var->double_c[14] = "fl";
-	var->double_c[15] = malloc(2 * sizeof(char))
+	var->double_c[15] = malloc(2 * sizeof(char));
 	var->double_c[15] = "fh";
-	var->double_c[16] = malloc(2 * sizeof(char))
+	var->double_c[16] = malloc(2 * sizeof(char));
 	var->double_c[16] = "ff";
-	var->double_c[17] = malloc(2 * sizeof(char))
+	var->double_c[17] = malloc(2 * sizeof(char));
 	var->double_c[17] = "gl";
-	var->double_c[18] = malloc(2 * sizeof(char))
+	var->double_c[18] = malloc(2 * sizeof(char));
 	var->double_c[18] = "gr";
-	var->double_c[19] = malloc(2 * sizeof(char))
+	var->double_c[19] = malloc(2 * sizeof(char));
 	var->double_c[19] = "gn";
-	var->double_c[20] = malloc(2 * sizeof(char))
+	var->double_c[20] = malloc(2 * sizeof(char));
 	var->double_c[20] = "gm";
-	var->double_c[21] = malloc(2 * sizeof(char))
+	var->double_c[21] = malloc(2 * sizeof(char));
 	var->double_c[21] = "gh";
-	var->double_c[22] = malloc(2 * sizeof(char))
+	var->double_c[22] = malloc(2 * sizeof(char));
 	var->double_c[22] = "kr";
-	var->double_c[23] = malloc(2 * sizeof(char))
+	var->double_c[23] = malloc(2 * sizeof(char));
 	var->double_c[23] = "kl";
-	var->double_c[24] = malloc(2 * sizeof(char))
+	var->double_c[24] = malloc(2 * sizeof(char));
 	var->double_c[24] = "kh";
-	var->double_c[25] = malloc(2 * sizeof(char))
+	var->double_c[25] = malloc(2 * sizeof(char));
 	var->double_c[25] = "ks";
-	var->double_c[26] = malloc(2 * sizeof(char))
+	var->double_c[26] = malloc(2 * sizeof(char));
 	var->double_c[26] = "lh";
-	var->double_c[27] = malloc(2 * sizeof(char))
+	var->double_c[27] = malloc(2 * sizeof(char));
 	var->double_c[27] = "ll";
-	var->double_c[28] = malloc(2 * sizeof(char))
+	var->double_c[28] = malloc(2 * sizeof(char));
 	var->double_c[28] = "mt";
-	var->double_c[29] = malloc(2 * sizeof(char))
+	var->double_c[29] = malloc(2 * sizeof(char));
 	var->double_c[29] = "mh";
-	var->double_c[30] = malloc(2 * sizeof(char))
+	var->double_c[30] = malloc(2 * sizeof(char));
 	var->double_c[30] = "mm";
-	var->double_c[31] = malloc(2 * sizeof(char))
+	var->double_c[31] = malloc(2 * sizeof(char));
 	var->double_c[31] = "nt";
-	var->double_c[32] = malloc(2 * sizeof(char))
+	var->double_c[32] = malloc(2 * sizeof(char));
 	var->double_c[32] = "nh";
-	var->double_c[33] = malloc(2 * sizeof(char))
+	var->double_c[33] = malloc(2 * sizeof(char));
 	var->double_c[33] = "nn";
-	var->double_c[34] = malloc(2 * sizeof(char))
+	var->double_c[34] = malloc(2 * sizeof(char));
 	var->double_c[34] = "ps";
-	var->double_c[35] = malloc(2 * sizeof(char))
+	var->double_c[35] = malloc(2 * sizeof(char));
 	var->double_c[35] = "pr";
-	var->double_c[36] = malloc(2 * sizeof(char))
+	var->double_c[36] = malloc(2 * sizeof(char));
 	var->double_c[36] = "pl";
-	var->double_c[37] = malloc(2 * sizeof(char))
+	var->double_c[37] = malloc(2 * sizeof(char));
 	var->double_c[37] = "ph";
-	var->double_c[38] = malloc(2 * sizeof(char))
+	var->double_c[38] = malloc(2 * sizeof(char));
 	var->double_c[38] = "pf";
-	var->double_c[39] = malloc(2 * sizeof(char))
+	var->double_c[39] = malloc(2 * sizeof(char));
 	var->double_c[39] = "pn";
-	var->double_c[40] = malloc(2 * sizeof(char))
+	var->double_c[40] = malloc(2 * sizeof(char));
 	var->double_c[40] = "pp";
-	var->double_c[41] = malloc(2 * sizeof(char))
+	var->double_c[41] = malloc(2 * sizeof(char));
 	var->double_c[41] = "qr";
-	var->double_c[42] = malloc(2 * sizeof(char))
+	var->double_c[42] = malloc(2 * sizeof(char));
 	var->double_c[42] = "ql";
-	var->double_c[43] = malloc(2 * sizeof(char))
+	var->double_c[43] = malloc(2 * sizeof(char));
 	var->double_c[43] = "qh";
-	var->double_c[44] = malloc(2 * sizeof(char))
+	var->double_c[44] = malloc(2 * sizeof(char));
 	var->double_c[44] = "qw";
-	var->double_c[45] = malloc(2 * sizeof(char))
+	var->double_c[45] = malloc(2 * sizeof(char));
 	var->double_c[45] = "rh";
-	var->double_c[46] = malloc(2 * sizeof(char))
+	var->double_c[46] = malloc(2 * sizeof(char));
 	var->double_c[46] = "rr";
-	var->double_c[47] = malloc(2 * sizeof(char))
+	var->double_c[47] = malloc(2 * sizeof(char));
 	var->double_c[48] = "sh";
-	var->double_c[49] = malloc(2 * sizeof(char))
+	var->double_c[49] = malloc(2 * sizeof(char));
 	var->double_c[50] = "ss";
-	var->double_c[51] = malloc(2 * sizeof(char))
+	var->double_c[51] = malloc(2 * sizeof(char));
 	var->double_c[51] = "sl";
-	var->double_c[52] = malloc(2 * sizeof(char))
+	var->double_c[52] = malloc(2 * sizeof(char));
 	var->double_c[52] = "sm";
-	var->double_c[53] = malloc(2 * sizeof(char))
+	var->double_c[53] = malloc(2 * sizeof(char));
 	var->double_c[53] = "sn";
-	var->double_c[54] = malloc(2 * sizeof(char))
+	var->double_c[54] = malloc(2 * sizeof(char));
 	var->double_c[54] = "tt";
-	var->double_c[55] = malloc(2 * sizeof(char))
+	var->double_c[55] = malloc(2 * sizeof(char));
 	var->double_c[55] = "th";
-	var->double_c[56] = malloc(2 * sizeof(char))
+	var->double_c[56] = malloc(2 * sizeof(char));
 	var->double_c[56] = "tr";
-	var->double_c[57] = malloc(2 * sizeof(char))
+	var->double_c[57] = malloc(2 * sizeof(char));
 	var->double_c[57] = "tl";
-	var->double_c[58] = malloc(2 * sizeof(char))
+	var->double_c[58] = malloc(2 * sizeof(char));
 	var->double_c[58] = "vr";
-	var->double_c[59] = malloc(2 * sizeof(char))
+	var->double_c[59] = malloc(2 * sizeof(char));
 	var->double_c[59] = "vl";
 	return (TRUE);
 }
@@ -203,7 +204,6 @@ t_bool	malloc_word(word_gen *var)
 void	fill_rand(word_gen *var)
 {
 	int i;
-	int nb;
 
 	i = 0;
 	while (var->w_size > 0)
@@ -219,33 +219,33 @@ void	print_word(word_gen *var)
 	ft_putstr(var->word);
 }
 
-int		word_gen(word_gen *var)
+int		generator(word_gen *var)
 {
-	if (! (init_alpha(&var)))
+	if (! (init_alpha(var)))
 	{
 		return (-2);
 	}
 	else
-	if (! (init_vowels(&var)))
+	if (! (init_vowels(var)))
 	{
 		return (-3);
 	}
 	else
-	if (! (init_consonants(&var)))
+	if (! (init_consonants(var)))
 	{
 		return (-4);
 	}
 	else
-	if (! (init_double_c(&var)))
+	if (! (init_double_c(var)))
 	{
 		return (-5);
 	}
 	else
-	if (! (malloc_word(&var)))
+	if (! (malloc_word(var)))
 		return (-6);
 	//We then generate the word
-	fill_rand(&var);
-	print_word(&var);
+	fill_rand(var);
+	print_word(var);
 	return (0);
 }
 

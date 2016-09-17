@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 10:15:56 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 16:37:34 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/17 10:52:40 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		main(int argc, char **argv)
 {
-	struct word_gen var;
+	word_gen var;
 
 	var.w_nb = ft_atoi(argv[1]);
 	var.w_size = ft_atoi(argv[2]);
 	if (argc != 3)
 		return (-1);
-	print_error(word_gen(&var));
+	print_error(generator(&var));
 	return (0);
 }

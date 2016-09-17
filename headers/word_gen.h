@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 10:22:12 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/16 14:52:18 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/17 10:49:06 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_putchar(char c);
 
 void	ft_putstr(char *str);
 
-int		word_gen(word_gen *var);
+int		generator(word_gen *var);
 
 int		ft_atoi(const char *str);
 
