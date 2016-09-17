@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/17 11:09:56 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/17 11:37:32 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,182 +14,92 @@
 
 t_bool	init_alpha(word_gen *var)
 {
-	int i;
-
-	i = 0;
-	if (! (var->alphabet = malloc(27 * sizeof(char))))
-		return (FALSE);
-	while ((i + 97) <= 122)
-	{
-		var->alphabet[i] = 97 + i;
-		i++;
-	}
-	var->alphabet[i] = '\0';
-	return (TRUE);
+   if (!(var->alphabet = ft_strdup("abcdefghijklmnopqrstuvwxyz")))
+       return (FALSE);
+   else
+       return (TRUE);
 }
 
-t_bool	init_vowels(word_gen *var)
+t_bool    init_vowels(word_gen *var)
 {
-	if (! (var->vowels = malloc (7 * sizeof (char))))
-		return (FALSE);
-	var->vowels[0] = 'a';
-	var->vowels[1] = 'e';
-	var->vowels[2] = 'i';
-	var->vowels[3] = 'o';
-	var->vowels[4] = 'u';
-	var->vowels[5] = 'y';
-	var->vowels[6] = '\0';
-	return (TRUE);
+   if (!(var->vowels = ft_strdup("aeiouy")))
+       return (FALSE);
+   else
+       return (TRUE);
 }
 
-t_bool	init_consonants(word_gen *var)
+t_bool    init_consonants(word_gen *var)
 {
-	if (! (var->consonants = malloc (21 * sizeof (char))))
-		return (FALSE);
-	var->consonants[0] = 'b';
-	var->consonants[1] = 'c';
-	var->consonants[2] = 'd';
-	var->consonants[3] = 'f';
-	var->consonants[4] = 'g';
-	var->consonants[5] = 'h';
-	var->consonants[6] = 'j';
-	var->consonants[7] = 'k';
-	var->consonants[8] = 'l';
-	var->consonants[9] = 'm';
-	var->consonants[10] = 'n';
-	var->consonants[11] = 'p';
-	var->consonants[12] = 'q';
-	var->consonants[13] = 'r';
-	var->consonants[14] = 's';
-	var->consonants[15] = 't';
-	var->consonants[16] = 'v';
-	var->consonants[17] = 'w';
-	var->consonants[18] = 'x';
-	var->consonants[19] = 'z';
-	var->consonants[20] = '\0';
-	return (TRUE);
+   if (!(var->consonants = ft_strdup("bcdfghjklmnpqrstvwxz")))
+       return (FALSE);
+   else
+       return (TRUE);
 }
 
 t_bool	init_double_c(word_gen *var)
 {
-	if (! (var->double_c = malloc(59 * sizeof (char *))))
+	if (! (var->double_c = malloc(61 * sizeof (char *))))
 		return (FALSE);
-	var->double_c[0] = malloc(2 * sizeof(char));
-	var->double_c[0] = "br";
-	var->double_c[1] = malloc(2 * sizeof(char));
-	var->double_c[1] = "bl";
-	var->double_c[2] = malloc(2 * sizeof(char));
-	var->double_c[2] = "bz";
-	var->double_c[3] = malloc(2 * sizeof(char));
-	var->double_c[3] = "bh";
-	var->double_c[4] = malloc(2 * sizeof(char));
-	var->double_c[4] = "cr";
-	var->double_c[5] = malloc(2 * sizeof(char));
-	var->double_c[5] = "cl";
-	var->double_c[6] = malloc(2 * sizeof(char));
-	var->double_c[6] = "ch";
-	var->double_c[7] = malloc(2 * sizeof(char));
-	var->double_c[7] = "cc";
-	var->double_c[8] = malloc(2 * sizeof(char));
-	var->double_c[8] = "dr";
-	var->double_c[9] = malloc(2 * sizeof(char));
-	var->double_c[9] = "dl";
-	var->double_c[10] = malloc(2 * sizeof(char));
-	var->double_c[10] = "dj";
-	var->double_c[11] = malloc(2 * sizeof(char));
-	var->double_c[11] = "dh";
-	var->double_c[12] = malloc(2 * sizeof(char));
-	var->double_c[12] = "dd";
-	var->double_c[13] = malloc(2 * sizeof(char));
-	var->double_c[13] = "fr";
-	var->double_c[14] = malloc(2 * sizeof(char));
-	var->double_c[14] = "fl";
-	var->double_c[15] = malloc(2 * sizeof(char));
-	var->double_c[15] = "fh";
-	var->double_c[16] = malloc(2 * sizeof(char));
-	var->double_c[16] = "ff";
-	var->double_c[17] = malloc(2 * sizeof(char));
-	var->double_c[17] = "gl";
-	var->double_c[18] = malloc(2 * sizeof(char));
-	var->double_c[18] = "gr";
-	var->double_c[19] = malloc(2 * sizeof(char));
-	var->double_c[19] = "gn";
-	var->double_c[20] = malloc(2 * sizeof(char));
-	var->double_c[20] = "gm";
-	var->double_c[21] = malloc(2 * sizeof(char));
-	var->double_c[21] = "gh";
-	var->double_c[22] = malloc(2 * sizeof(char));
-	var->double_c[22] = "kr";
-	var->double_c[23] = malloc(2 * sizeof(char));
-	var->double_c[23] = "kl";
-	var->double_c[24] = malloc(2 * sizeof(char));
-	var->double_c[24] = "kh";
-	var->double_c[25] = malloc(2 * sizeof(char));
-	var->double_c[25] = "ks";
-	var->double_c[26] = malloc(2 * sizeof(char));
-	var->double_c[26] = "lh";
-	var->double_c[27] = malloc(2 * sizeof(char));
-	var->double_c[27] = "ll";
-	var->double_c[28] = malloc(2 * sizeof(char));
-	var->double_c[28] = "mt";
-	var->double_c[29] = malloc(2 * sizeof(char));
-	var->double_c[29] = "mh";
-	var->double_c[30] = malloc(2 * sizeof(char));
-	var->double_c[30] = "mm";
-	var->double_c[31] = malloc(2 * sizeof(char));
-	var->double_c[31] = "nt";
-	var->double_c[32] = malloc(2 * sizeof(char));
-	var->double_c[32] = "nh";
-	var->double_c[33] = malloc(2 * sizeof(char));
-	var->double_c[33] = "nn";
-	var->double_c[34] = malloc(2 * sizeof(char));
-	var->double_c[34] = "ps";
-	var->double_c[35] = malloc(2 * sizeof(char));
-	var->double_c[35] = "pr";
-	var->double_c[36] = malloc(2 * sizeof(char));
-	var->double_c[36] = "pl";
-	var->double_c[37] = malloc(2 * sizeof(char));
-	var->double_c[37] = "ph";
-	var->double_c[38] = malloc(2 * sizeof(char));
-	var->double_c[38] = "pf";
-	var->double_c[39] = malloc(2 * sizeof(char));
-	var->double_c[39] = "pn";
-	var->double_c[40] = malloc(2 * sizeof(char));
-	var->double_c[40] = "pp";
-	var->double_c[41] = malloc(2 * sizeof(char));
-	var->double_c[41] = "qr";
-	var->double_c[42] = malloc(2 * sizeof(char));
-	var->double_c[42] = "ql";
-	var->double_c[43] = malloc(2 * sizeof(char));
-	var->double_c[43] = "qh";
-	var->double_c[44] = malloc(2 * sizeof(char));
-	var->double_c[44] = "qw";
-	var->double_c[45] = malloc(2 * sizeof(char));
-	var->double_c[45] = "rh";
-	var->double_c[46] = malloc(2 * sizeof(char));
-	var->double_c[46] = "rr";
-	var->double_c[47] = malloc(2 * sizeof(char));
-	var->double_c[48] = "sh";
-	var->double_c[49] = malloc(2 * sizeof(char));
-	var->double_c[50] = "ss";
-	var->double_c[51] = malloc(2 * sizeof(char));
-	var->double_c[51] = "sl";
-	var->double_c[52] = malloc(2 * sizeof(char));
-	var->double_c[52] = "sm";
-	var->double_c[53] = malloc(2 * sizeof(char));
-	var->double_c[53] = "sn";
-	var->double_c[54] = malloc(2 * sizeof(char));
-	var->double_c[54] = "tt";
-	var->double_c[55] = malloc(2 * sizeof(char));
-	var->double_c[55] = "th";
-	var->double_c[56] = malloc(2 * sizeof(char));
-	var->double_c[56] = "tr";
-	var->double_c[57] = malloc(2 * sizeof(char));
-	var->double_c[57] = "tl";
-	var->double_c[58] = malloc(2 * sizeof(char));
-	var->double_c[58] = "vr";
-	var->double_c[59] = malloc(2 * sizeof(char));
-	var->double_c[59] = "vl";
+	var->double_c[0] = ft_strdup("");
+	var->double_c[1] = ft_strdup("");
+	var->double_c[2] = ft_strdup("");
+	var->double_c[3] = ft_strdup("");
+	var->double_c[4] = ft_strdup("");
+	var->double_c[5] = ft_strdup("");
+	var->double_c[6] = ft_strdup("");
+	var->double_c[7] = ft_strdup("");
+	var->double_c[8] = ft_strdup("");
+	var->double_c[9] = ft_strdup("");
+	var->double_c[10] = ft_strdup("");
+	var->double_c[11] = ft_strdup("");
+	var->double_c[12] = ft_strdup("");
+	var->double_c[13] = ft_strdup("");
+	var->double_c[14] = ft_strdup("");
+	var->double_c[15] = ft_strdup("");
+	var->double_c[16] = ft_strdup("");
+	var->double_c[17] = ft_strdup("");
+	var->double_c[18] = ft_strdup("");
+	var->double_c[19] = ft_strdup("");
+	var->double_c[20] = ft_strdup("");
+	var->double_c[21] = ft_strdup("");
+	var->double_c[22] = ft_strdup("");
+	var->double_c[23] = ft_strdup("");
+	var->double_c[24] = ft_strdup("");
+	var->double_c[25] = ft_strdup("");
+	var->double_c[26] = ft_strdup("");
+	var->double_c[27] = ft_strdup("");
+	var->double_c[28] = ft_strdup("");
+	var->double_c[29] = ft_strdup("");
+	var->double_c[30] = ft_strdup("");
+	var->double_c[31] = ft_strdup("");
+	var->double_c[32] = ft_strdup("");
+	var->double_c[33] = ft_strdup("");
+	var->double_c[34] = ft_strdup("");
+	var->double_c[35] = ft_strdup("");
+	var->double_c[36] = ft_strdup("");
+	var->double_c[37] = ft_strdup("");
+	var->double_c[38] = ft_strdup("");
+	var->double_c[39] = ft_strdup("");
+	var->double_c[40] = ft_strdup("");
+	var->double_c[41] = ft_strdup("");
+	var->double_c[42] = ft_strdup("");
+	var->double_c[43] = ft_strdup("");
+	var->double_c[44] = ft_strdup("");
+	var->double_c[45] = ft_strdup("");
+	var->double_c[46] = ft_strdup("");
+	var->double_c[47] = ft_strdup("");
+	var->double_c[48] = ft_strdup("");
+	var->double_c[49] = ft_strdup("");
+	var->double_c[50] = ft_strdup("");
+	var->double_c[51] = ft_strdup("");
+	var->double_c[52] = ft_strdup("");
+	var->double_c[53] = ft_strdup("");
+	var->double_c[54] = ft_strdup("");
+	var->double_c[55] = ft_strdup("");
+	var->double_c[56] = ft_strdup("");
+	var->double_c[57] = ft_strdup("");
+	var->double_c[58] = ft_strdup("");
+	var->double_c[59] = ft_strdup("");
 	return (TRUE);
 }
 

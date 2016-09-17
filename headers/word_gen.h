@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 10:22:12 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/17 10:49:06 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/17 11:40:15 by jlasne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int		ft_atoi(const char *str);
 int		ft_rand(int min, int max);
 
 void	print_error(int error_number);
+
+char*	ft_strdup(const char *s);
 
 #endif
