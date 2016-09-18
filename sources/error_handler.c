@@ -6,7 +6,7 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:34:06 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/17 10:52:29 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/18 14:00:25 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_error(int error_number)
 {
 	if (error_number == 0)
 	{
-		ft_putstr("Application exited sucessfully w/o major errors");
+		ft_putstr("Application exited sucessfully w/o major errors\n");
 	}
 	if (error_number == -1)
 	{
