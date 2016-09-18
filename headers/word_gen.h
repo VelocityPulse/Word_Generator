@@ -6,24 +6,37 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 10:22:12 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/17 11:40:15 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/18 13:52:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WORD_GEN_H
 # define WORD_GEN_H
-#include <stdlib.h>
-#include <unistd.h>
-#include "vars_struct.h"
-#define TRUE 1
-#define FALSE 1
+
+# include <stdlib.h>
+# include <unistd.h>
+
+# define TRUE 1
+# define FALSE 1
+
+typedef struct	word_gen
+{
+	int		w_size;
+	int		w_nb;
+	char	*word;
+	char	*alphabet;
+	char	*vowels;
+	char	*consonants;
+	char	**double_c;
+}				t_word_gen;
+
 typedef int		t_bool;
 
 int		ft_putchar(char c);
 
 void	ft_putstr(char *str);
 
-int		generator(word_gen *var);
+int		generator(t_word_gen *var);
 
 int		ft_atoi(const char *str);
 

@@ -6,13 +6,13 @@
 /*   By: jlasne <jlasne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 11:10:37 by jlasne            #+#    #+#             */
-/*   Updated: 2016/09/17 11:37:32 by jlasne           ###   ########.fr       */
+/*   Updated: 2016/09/18 13:53:20 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/word_gen.h"
 
-t_bool	init_alpha(word_gen *var)
+t_bool	init_alpha(t_word_gen *var)
 {
    if (!(var->alphabet = ft_strdup("abcdefghijklmnopqrstuvwxyz")))
        return (FALSE);
@@ -20,7 +20,7 @@ t_bool	init_alpha(word_gen *var)
        return (TRUE);
 }
 
-t_bool    init_vowels(word_gen *var)
+t_bool    init_vowels(t_word_gen *var)
 {
    if (!(var->vowels = ft_strdup("aeiouy")))
        return (FALSE);
@@ -28,7 +28,7 @@ t_bool    init_vowels(word_gen *var)
        return (TRUE);
 }
 
-t_bool    init_consonants(word_gen *var)
+t_bool    init_consonants(t_word_gen *var)
 {
    if (!(var->consonants = ft_strdup("bcdfghjklmnpqrstvwxz")))
        return (FALSE);
@@ -36,7 +36,7 @@ t_bool    init_consonants(word_gen *var)
        return (TRUE);
 }
 
-t_bool	init_double_c(word_gen *var)
+t_bool	init_double_c(t_word_gen *var)
 {
 	if (! (var->double_c = malloc(61 * sizeof (char *))))
 		return (FALSE);
@@ -103,7 +103,7 @@ t_bool	init_double_c(word_gen *var)
 	return (TRUE);
 }
 
-t_bool	malloc_word(word_gen *var)
+t_bool	malloc_word(t_word_gen *var)
 {
 	if (! (var->word = malloc(var->w_size * sizeof(char))))
 		return (FALSE);
@@ -111,7 +111,7 @@ t_bool	malloc_word(word_gen *var)
 		return (TRUE);
 }
 
-void	fill_rand(word_gen *var)
+void	fill_rand(t_word_gen *var)
 {
 	int i;
 
@@ -124,12 +124,12 @@ void	fill_rand(word_gen *var)
 	}
 }
 
-void	print_word(word_gen *var)
+void	print_word(t_word_gen *var)
 {
 	ft_putstr(var->word);
 }
 
-int		generator(word_gen *var)
+int		generator(t_word_gen *var)
 {
 	if (! (init_alpha(var)))
 	{
